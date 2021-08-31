@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head_title %}
+Create Pet
+{% endblock %}
+
+{% block main_content %}
+<h1>Create Pet</h1>
+<div class="row">
+    <div class="col-6 mb-3">
+        <form method="post" action="{% url 'create_pet' %}">
+            {% csrf_token %}
+            {{ form }}
+
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
