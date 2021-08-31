@@ -18,10 +18,10 @@ def export_pets(request):
     )
 
     writer = csv.writer(response)
-    writer.writerow(('Name', 'Gender', 'Age', 'Food', 'Notes'))
+    writer.writerow(('Name', 'Type', 'Gender', 'Age', 'Food', 'Notes'))
 
     for pet in pets:
-        writer.writerow((pet.name, pet.gender, pet.age, pet.food, pet.notes))
+        writer.writerow((pet.name, pet.type, pet.gender, pet.age, pet.food, pet.notes))
 
     return response
 
