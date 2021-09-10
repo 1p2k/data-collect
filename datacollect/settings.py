@@ -127,3 +127,7 @@ if os.environ.get('IS_PRODUCTION', False):
 
     # Activate Django-Heroku.
     django_heroku.settings(locals())
+
+GOOGLE_RECAPTCHA_SITE_KEY = os.environ.get('GOOGLE_RECAPTCHA_SITE_KEY')
+
+GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')

@@ -1,5 +1,7 @@
 import csv
+import requests
 from datetime import datetime
+from django.conf import settings
 from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, TemplateView
@@ -41,3 +43,9 @@ class CreatePetView(CreateView):
     form_class = PetForm
     success_url = reverse_lazy('list_pets')
     template_name = 'pets/pet_create.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['google_recaptcha_site_key'] = settings.GOOGLE_RECAPTCHA_SITE_KEY
+
+        return context

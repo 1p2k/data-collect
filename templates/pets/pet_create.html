@@ -18,3 +18,17 @@ Create Pet
 </div>
 
 {% endblock %}
+
+{% block footer_scripts %}
+<!-- reCAPTCHA API -->
+<script src="https://www.google.com/recaptcha/api.js?render={{ google_recaptcha_site_key }}"></script>
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('{{ google_recaptcha_site_key }}', {action: '{% url "create_pet" %}'}).then(function(token) {
+            document.getElementById('id_recaptcha').value = token;
+        });
+    });
+
+
+</script>
+{% endblock %}
