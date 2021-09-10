@@ -8,5 +8,8 @@ Django example of collecting data with an option of CSV export.
 - Pets
 
 ## Changelog
+### 1.1.0 released on 2021-09-10
+`Added` Google reCAPTCHA integration
+
 ### 1.0.0 released on 2021-09-01
 `Added` Initial version
